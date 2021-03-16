@@ -1,0 +1,5 @@
+###
+linia 3
+linia 2
+linia 1
+to jest plik tekstowy
