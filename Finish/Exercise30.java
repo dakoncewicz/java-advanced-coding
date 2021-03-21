@@ -5,8 +5,6 @@ Zawartość jak i tytuł nowego pliku powinny być odwrócone (od tyłu).
  */
 
 import java.io.*;
-import java.util.ArrayDeque;
-import java.util.Queue;
 import java.util.Stack;
 
 public class Exercise30 {
@@ -36,13 +34,11 @@ public class Exercise30 {
 
             //Reading the file from stream and store each line in a queue LIFO
             while((line = in.readLine()) != null) {
-                //System.out.println(line);
-                myStack.push(line);  // pop -> poll  pop ->peek
+                myStack.push(line);
             }
 
             while( !myStack.isEmpty())
                 out.write(myStack.pop() + "\n");
-                //System.out.println(myStack.pop());
 
             in.close();
             out.close();

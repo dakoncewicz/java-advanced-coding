@@ -23,8 +23,8 @@ public class Exercise25 {
     }
 
     class Basket {
-        private final int MAX_ELEENT = 3;
-        int[] elements = new int[MAX_ELEENT];
+        private final int MAX_ELEMENT = 3;
+        int[] elements = new int[MAX_ELEMENT];
         int index;
 
         public void addToBasket (Integer elem)  {

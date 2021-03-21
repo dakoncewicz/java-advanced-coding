@@ -10,6 +10,7 @@ Utwórz zmienną typu Thread i zainicjuj ją przekazując jako parametr kons
  Na zmiennej typu Thread wykonać metodę start().
  */
 public class Exercise35 {
+    // Key concepts : consurrent programming, interface runnable
     public static void main(String[] args) {
         //System.out.println(Thread.activeCount());
         //System.out.println(Runtime.getRuntime().availableProcessors());

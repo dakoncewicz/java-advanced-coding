@@ -1,5 +1,6 @@
 to jest plik tekstowy
-linia 1
-linia 2
-linia 3
+to linia 1
+to linia 2
+to linia 3
+end of plik
 ###

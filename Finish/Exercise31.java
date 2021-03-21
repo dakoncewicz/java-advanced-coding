@@ -8,6 +8,7 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -18,14 +19,17 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class Exercise31 {
+    // Key concepts : working with NIO package, read all lines to the buffer,
     public void show() throws IOException {
-        String fileName= "c://test.txt";
+        String path = "Assets/";
+        String fileName= "SDAexample.txt";
+
 
         // Java classical approach
         var file = new File(fileName);
 
-        List<String> lines = java.nio.file.Files.readAllLines(
-                Paths.get(file.toURI()), StandardCharsets.UTF_8);
+        List<String> lines = Files.readAllLines(
+                Path.of(path + fileName), StandardCharsets.UTF_8);
 
         Map<String, Integer> wordOccurrences = new HashMap<String, Integer>();
 
@@ -50,8 +54,9 @@ public class Exercise31 {
             }
         }
 
-        System.out.println(wordsSum(fileName));
-        System.out.println( wordsCount(fileName) );
+        System.out.println(wordOccurrences);
+        System.out.println("Word counter : "+wordsCount(path+fileName) );
+        System.out.println("Sum of word in file : "+wordsSum(path+fileName));
     }
 
     private Map<String,Long> wordsCount(String fileName) throws IOException {

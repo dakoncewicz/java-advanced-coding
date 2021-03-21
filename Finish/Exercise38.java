@@ -1,16 +1,15 @@
 package com.dkoncewicz;
-/* Zadanie 31
-Utwórz klasę rozszerzającą klasę Thread np. MyThread, przeciąż metodę run(), w której wyświetlisz w
-konsoli nazwę wątku odczytując ją ze statycznej metody aktualnego wątku: Thread.currentThread().getName()
-Utwórz klasę z metodą public static void main(String[] args). Wewnątrz metody main utwórz zmienną typu naszej klasy stworzonej powyżej np. MyThread oraz zainicjuj klasę.
-Na zmiennej wykonać metodę start().
+/* Zadanie 38
 
-*/
+Napisz aplikację, która będzie symulować maszynę do robienia kawy.
+W przypadku, gdy dowolna cykliczna usługa parzenia kawy zastanie pusty zbiornik na wodę, powinno nastąpić wstrzymanie wątku.
+W momencie, gdy w maszynie zostanie uzupełniona woda, powinno nastąpić wzbudzenie wątku.
+ */
 
-public class Exercise {
-    //
+public class Exercise38 {
+    //Key concepts : synchronization block, thread signaling with : wait() and notify()
     public static void main(String[] args) {
-       var coffeeMachine = new CoffeeMachine(1000);
+        var coffeeMachine = new CoffeeMachine(1000);
 
         Thread makeLatte = new Thread(new Runnable() {
             @Override
@@ -69,7 +68,7 @@ public class Exercise {
 
         synchronized void getWater(int amount) throws InterruptedException {
             while( water < amount) {
-                System.out.println("Not enought water");
+                System.out.println("Not enought water. Pleas refill water container");
                 wait();
             }
             water -=amount;
@@ -79,9 +78,7 @@ public class Exercise {
         synchronized void fillWater(int amount){
             water += amount;
             notify();
-            System.out.println("Water container is full. Let's make a coffee");
+            System.out.println("Water container is fully again. Let's make a coffee!!");
         }
     }
-
 }
-

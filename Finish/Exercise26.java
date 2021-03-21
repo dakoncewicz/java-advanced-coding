@@ -1,6 +1,7 @@
 package com.dkoncewicz;
 /* Zadanie 26
-Wykorzystując mechanizmy programowania funkcyjnego na podstawie zadanej struktury wyświetl: 1. listę wszystkich Modelów,
+Wykorzystując mechanizmy programowania funkcyjnego na podstawie zadanej struktury wyświetl:
+1. listę wszystkich Modelów,
 2. listę wszystkich aut,
 3. listę wszystkich nazw producentów,
 4. listę wszystkich lat założenia producentów,

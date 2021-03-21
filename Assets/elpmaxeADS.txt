@@ -1,5 +1,6 @@
 ###
-linia 3
-linia 2
-linia 1
+end of plik
+to linia 3
+to linia 2
+to linia 1
 to jest plik tekstowy
